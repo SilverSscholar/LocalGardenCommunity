@@ -1,7 +1,11 @@
-﻿namespace LocalGardenCommunity.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace LocalGardenCommunity.Models
 {
     public class AppUser 
     {
+        [Key]
+        public string Id { get; set; }
         public int? MyVegetables { get; set; }
        
         public Address? Address { get; set; }
