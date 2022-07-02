@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace LocalGardenCommunity.Models
 {
-    public class GardeningClub
+    public class GardenContest
     {
         [Key]
         public int Id { get; set; }
@@ -14,7 +14,7 @@ namespace LocalGardenCommunity.Models
         [ForeignKey("Address")]
         public int? AddressId { get; set; }
         public Address? Address { get; set; }
-        public GardeningClubCategory GardeningClubCategory { get; set; }
+        public GardenContestCategory GardenContestCategory { get; set; }
         [ForeignKey("AppUser")]
         public string? AppUserId { get; set; }
         public AppUser? AppUser { get; set; }
