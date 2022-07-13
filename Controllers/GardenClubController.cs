@@ -1,5 +1,7 @@
 ﻿using LocalGardenCommunity.Data;
+using LocalGardenCommunity.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace LocalGardenCommunity.Controllers
 {
@@ -15,6 +17,12 @@ namespace LocalGardenCommunity.Controllers
         {
             var gardeningClubs = _context.GardeningClubs.ToList();
             return View(gardeningClubs);
+        }
+        
+        public IActionResult Detail(int id)
+        {
+            GardeningClub gardeningClub = _context.GardeningClubs.Include(a => a.Address).FirstOrDefault(c => c.Id == id);
+            return View(gardeningClub);
         }
     }
 }

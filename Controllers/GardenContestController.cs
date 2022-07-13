@@ -1,6 +1,7 @@
 ﻿using LocalGardenCommunity.Data;
 using LocalGardenCommunity.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace LocalGardenCommunity.Controllers
 {
@@ -17,6 +18,11 @@ namespace LocalGardenCommunity.Controllers
             List<GardenContest> gardenContests = _context.GardenContestes.ToList();
        
             return View(gardenContests);
+        }
+        public IActionResult Detail(int id)
+        {
+            GardenContest gardenContest = _context.GardenContestes.Include(a => a.Address).FirstOrDefault(c => c.Id == id);
+            return View(gardenContest);
         }
     }
 }

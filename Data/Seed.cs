@@ -21,7 +21,7 @@ namespace LocalGardenCommunity.Data
                         {
                             Title = "Garden Club 1",
                             Image = "https://www.eatthis.com/wp-content/uploads/sites/4/2020/05/running.jpg?quality=82&strip=1&resize=640%2C360",
-                            Description = "This is the description of the first cinema",
+                            Description = "This is the description of the first club",
                             GardeningClubCategory = GardeningClubCategory.Outdoor,
                             Address = new Address()
                             {
@@ -33,7 +33,7 @@ namespace LocalGardenCommunity.Data
                         new GardeningClub()
                         {
                             Title = "Garden Club 2",
-                            Image = "https://www.eatthis.com/wp-content/uploads/sites/4/2020/05/running.jpg?quality=82&strip=1&resize=640%2C360",
+                            Image = "https://www.thoughtco.com/thmb/BzILs7mpbaH0_XV_XKhoOgcAlyw=/3865x2576/filters:fill(auto,1)/spring-garden-with-sundial-in-circular-bed-in-centre-of-lawn-with-ceanothus--ceanothus---puget-blue--130793740-593d98535f9b58d58ac501cb.jpg",
                             Description = "This is the description of the first cinema",
                             GardeningClubCategory = GardeningClubCategory.Homesteading,
                             Address = new Address()
@@ -46,7 +46,7 @@ namespace LocalGardenCommunity.Data
                         new GardeningClub()
                         {
                             Title = "Garden Club 3",
-                            Image = "https://www.eatthis.com/wp-content/uploads/sites/4/2020/05/running.jpg?quality=82&strip=1&resize=640%2C360",
+                            Image = "https://www.thoughtco.com/thmb/BzILs7mpbaH0_XV_XKhoOgcAlyw=/3865x2576/filters:fill(auto,1)/spring-garden-with-sundial-in-circular-bed-in-centre-of-lawn-with-ceanothus--ceanothus---puget-blue--130793740-593d98535f9b58d58ac501cb.jpg",
                             Description = "This is the description of the first club",
                             GardeningClubCategory = GardeningClubCategory.Indoor,
                             Address = new Address()
@@ -59,7 +59,7 @@ namespace LocalGardenCommunity.Data
                         new GardeningClub()
                         {
                             Title = "Garden Club 4",
-                            Image = "https://www.eatthis.com/wp-content/uploads/sites/4/2020/05/running.jpg?quality=82&strip=1&resize=640%2C360",
+                            Image = "https://www.thoughtco.com/thmb/BzILs7mpbaH0_XV_XKhoOgcAlyw=/3865x2576/filters:fill(auto,1)/spring-garden-with-sundial-in-circular-bed-in-centre-of-lawn-with-ceanothus--ceanothus---puget-blue--130793740-593d98535f9b58d58ac501cb.jpg",
                             Description = "This is the description of the first club",
                             GardeningClubCategory = GardeningClubCategory.Floral,
                             Address = new Address()
@@ -72,7 +72,7 @@ namespace LocalGardenCommunity.Data
                            new GardeningClub()
                         {
                             Title = "Garden Club 5",
-                            Image = "https://www.eatthis.com/wp-content/uploads/sites/4/2020/05/running.jpg?quality=82&strip=1&resize=640%2C360",
+                            Image = "https://www.thoughtco.com/thmb/BzILs7mpbaH0_XV_XKhoOgcAlyw=/3865x2576/filters:fill(auto,1)/spring-garden-with-sundial-in-circular-bed-in-centre-of-lawn-with-ceanothus--ceanothus---puget-blue--130793740-593d98535f9b58d58ac501cb.jpg",
                             Description = "This is the description of the first club",
                             GardeningClubCategory = GardeningClubCategory.Greenhouse,
                             Address = new Address()
@@ -94,7 +94,7 @@ namespace LocalGardenCommunity.Data
                         new GardenContest()
                         {
                             Title = "Contest 1",
-                            Image = "https://www.eatthis.com/wp-content/uploads/sites/4/2020/05/running.jpg?quality=82&strip=1&resize=640%2C360",
+                            Image = "https://www.thoughtco.com/thmb/BzILs7mpbaH0_XV_XKhoOgcAlyw=/3865x2576/filters:fill(auto,1)/spring-garden-with-sundial-in-circular-bed-in-centre-of-lawn-with-ceanothus--ceanothus---puget-blue--130793740-593d98535f9b58d58ac501cb.jpg",
                             Description = "This is the description of the first race",
                             GardenContestCategory = GardenContestCategory.YoungGardeners,
                             Address = new Address()
@@ -107,7 +107,7 @@ namespace LocalGardenCommunity.Data
                         new GardenContest()
                         {
                             Title = "Contest 2",
-                            Image = "https://www.eatthis.com/wp-content/uploads/sites/4/2020/05/running.jpg?quality=82&strip=1&resize=640%2C360",
+                            Image = "https://www.thoughtco.com/thmb/BzILs7mpbaH0_XV_XKhoOgcAlyw=/3865x2576/filters:fill(auto,1)/spring-garden-with-sundial-in-circular-bed-in-centre-of-lawn-with-ceanothus--ceanothus---puget-blue--130793740-593d98535f9b58d58ac501cb.jpg",
                             Description = "This is the description of the first race",
                             GardenContestCategory = GardenContestCategory.SurvivalGarden,
                             AddressId = 5,
