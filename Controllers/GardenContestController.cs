@@ -1,4 +1,5 @@
 ﻿using LocalGardenCommunity.Data;
+using LocalGardenCommunity.Interfaces;
 using LocalGardenCommunity.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -7,21 +8,21 @@ namespace LocalGardenCommunity.Controllers
 {
     public class GardenContestController : Controller
     {
-        private readonly ApplicationDbContext _context;
+        private readonly IGardenContestRepository _gardenContestRepository;
 
-        public GardenContestController(ApplicationDbContext context)
+
+        public GardenContestController(IGardenContestRepository gardenContestRepository)
         {
-            _context = context;
+            _gardenContestRepository = gardenContestRepository;
         }
-        public IActionResult Index()
+        public async Task <IActionResult> Index()
         {
-            List<GardenContest> gardenContests = _context.GardenContestes.ToList();
-       
+            IEnumerable<GardenContest> gardenContests = await _gardenContestRepository.GetAll();
             return View(gardenContests);
         }
-        public IActionResult Detail(int id)
+        public async Task < IActionResult> Detail(int id)
         {
-            GardenContest gardenContest = _context.GardenContestes.Include(a => a.Address).FirstOrDefault(c => c.Id == id);
+            GardenContest gardenContest = await _gardenContestRepository.GetByIdAsync(id);
             return View(gardenContest);
         }
     }

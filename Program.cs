@@ -1,20 +1,25 @@
 using LocalGardenCommunity.Data;
+using LocalGardenCommunity.Interfaces;
+using LocalGardenCommunity.Repository;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer(connectionString));
+
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddControllersWithViews();
-
-
+builder.Services.AddScoped<IGardeningClubRepository, GardeningClubRepository>();
+builder.Services.AddScoped<IGardenContestRepository, GardenContestRepository>();
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+});
+  
 var app = builder.Build();
 
 if(args.Length ==1 && args [0].ToLower()=="seeddata")

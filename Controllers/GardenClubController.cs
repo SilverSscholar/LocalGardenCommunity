@@ -1,4 +1,5 @@
 ﻿using LocalGardenCommunity.Data;
+using LocalGardenCommunity.Interfaces;
 using LocalGardenCommunity.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -7,21 +8,24 @@ namespace LocalGardenCommunity.Controllers
 {
     public class GardenClubController : Controller
     {
-        private readonly ApplicationDbContext _context;
+        
+        private readonly IGardeningClubRepository _gardeningClubRepository;
 
-        public GardenClubController(ApplicationDbContext context)
+        public GardenClubController(ApplicationDbContext context, IGardeningClubRepository gardeningClubRepository)
+            
         {
-            _context = context;
+           
+            _gardeningClubRepository = gardeningClubRepository;
         }
-        public IActionResult Index()
+        public async Task <IActionResult> Index()
         {
-            var gardeningClubs = _context.GardeningClubs.ToList();
+            IEnumerable<GardeningClub> gardeningClubs = await _gardeningClubRepository.GetAll();
             return View(gardeningClubs);
         }
         
-        public IActionResult Detail(int id)
+        public async Task <IActionResult> Detail(int id)
         {
-            GardeningClub gardeningClub = _context.GardeningClubs.Include(a => a.Address).FirstOrDefault(c => c.Id == id);
+            GardeningClub gardeningClub = await _gardeningClubRepository.GetByIdAsync(id);
             return View(gardeningClub);
         }
     }
