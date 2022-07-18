@@ -32,5 +32,15 @@ namespace LocalGardenCommunity.Controllers
         {
             return View();
         }
+        [HttpPost]
+        public async Task<IActionResult> Create(GardeningClub gardeningClub)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(gardeningClub);
+            }
+            _gardeningClubRepository.Add(gardeningClub);
+            return RedirectToAction("Index");
+        }
     }
 }

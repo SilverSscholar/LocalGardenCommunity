@@ -13,6 +13,7 @@ namespace LocalGardenCommunity.Interfaces
         bool Update(GardeningClub gardeningClub);
         bool Delete(GardeningClub gardeningClub);
         bool Save();
+        
     }
 }
 
