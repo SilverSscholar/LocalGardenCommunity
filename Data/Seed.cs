@@ -96,7 +96,7 @@ namespace LocalGardenCommunity.Data
                             Title = "Contest 1",
                             Image = "https://www.thoughtco.com/thmb/BzILs7mpbaH0_XV_XKhoOgcAlyw=/3865x2576/filters:fill(auto,1)/spring-garden-with-sundial-in-circular-bed-in-centre-of-lawn-with-ceanothus--ceanothus---puget-blue--130793740-593d98535f9b58d58ac501cb.jpg",
                             Description = "This is the description of the first race",
-                            GardenContestCategory = GardenContestCategory.YoungGardeners,
+                            GardenContestCategory = GardenContestCategory.Young_Gardeners,
                             Address = new Address()
                             {
                                 Street = "123 Main St",
@@ -109,7 +109,7 @@ namespace LocalGardenCommunity.Data
                             Title = "Contest 2",
                             Image = "https://www.thoughtco.com/thmb/BzILs7mpbaH0_XV_XKhoOgcAlyw=/3865x2576/filters:fill(auto,1)/spring-garden-with-sundial-in-circular-bed-in-centre-of-lawn-with-ceanothus--ceanothus---puget-blue--130793740-593d98535f9b58d58ac501cb.jpg",
                             Description = "This is the description of the first race",
-                            GardenContestCategory = GardenContestCategory.SurvivalGarden,
+                            GardenContestCategory = GardenContestCategory.Survival_Garden,
                             AddressId = 5,
                             Address = new Address()
                             {

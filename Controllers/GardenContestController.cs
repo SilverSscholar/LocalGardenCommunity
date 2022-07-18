@@ -25,5 +25,9 @@ namespace LocalGardenCommunity.Controllers
             GardenContest gardenContest = await _gardenContestRepository.GetByIdAsync(id);
             return View(gardenContest);
         }
+        public IActionResult Create()
+        {
+            return View();
+        }
     }
 }

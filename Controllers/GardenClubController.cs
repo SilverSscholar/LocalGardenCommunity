@@ -28,5 +28,9 @@ namespace LocalGardenCommunity.Controllers
             GardeningClub gardeningClub = await _gardeningClubRepository.GetByIdAsync(id);
             return View(gardeningClub);
         }
+        public IActionResult Create()
+        {
+            return View();
+        }
     }
 }

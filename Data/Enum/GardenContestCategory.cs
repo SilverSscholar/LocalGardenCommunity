@@ -6,6 +6,8 @@
         GeneralGarden,
         EdibleGarden,
         SurvivalGarden,
-        PleasantGarden
+        PleasantGarden,
+        Survival_Garden,
+        Young_Gardeners
     }
 }
