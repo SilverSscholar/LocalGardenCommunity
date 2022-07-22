@@ -1,4 +1,5 @@
-﻿using LocalGardenCommunity.Data.Enum;
+﻿using System.ComponentModel.DataAnnotations;
+using LocalGardenCommunity.Data.Enum;
 using LocalGardenCommunity.Models;
 
 namespace LocalGardenCommunity.ViewModels
@@ -9,7 +10,8 @@ namespace LocalGardenCommunity.ViewModels
         public string Title { get; set; }
         public string Description { get; set; }
         public Address Address { get; set; }
-     
+        [DataType(DataType.Upload)]
+        public IFormFile Image { get; set; }
         public GardeningClubCategory GardeningClubCategory { get; set; }
     }
 }

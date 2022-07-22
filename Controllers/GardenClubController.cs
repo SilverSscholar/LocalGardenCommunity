@@ -37,14 +37,13 @@ namespace LocalGardenCommunity.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(CreateGardeningClubViewModel gardeningClubVM, IFormFile Image)
+        public async Task<IActionResult> Create(CreateGardeningClubViewModel gardeningClubVM)
         {
             if (ModelState.IsValid)
             {
-                var result = await _photoService.AddPhotoAsync(Image);
+                var result = await _photoService.AddPhotoAsync(gardeningClubVM.Image);
 
                 var gardeningClub = new GardeningClub
-
                 {
                     Title = gardeningClubVM.Title,
                     Description = gardeningClubVM.Description,
