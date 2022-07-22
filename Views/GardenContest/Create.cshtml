@@ -1,10 +1,8 @@
 ﻿@using LocalGardenCommunity.Data.Enum
 @using LocalGardenCommunity.ViewModels
 
-
-@model CreateGardeningClubViewModel
+@model CreateGardenContestViewModel
 @*
-    
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
@@ -19,13 +17,14 @@
     <label asp-for="Description">Description</label>
     <input asp-for="Description" class="form-control" placeholder="Description">
     <span asp-validation-for="Description" class = "text-danger"></span>
+ 
 
  </div> 
     <div class="form-group">
-    <label asp-for="GardeningClubCategory">GardeningClubCategory</label>
- <select asp-for="GardeningClubCategory" asp-items="@Html.GetEnumSelectList<GardeningClubCategory>()" class = "form-control">
+    <label asp-for="GardenContestCategory">GardengContestCategory</label>
+ <select asp-for="GardenContestCategory" asp-items="@Html.GetEnumSelectList<GardenContestCategory>()" class = "form-control">
       <option>--Select--</option> </select>
-    <span asp-validation-for="GardeningClubCategory" class = "text-danger"></span>
+    <span asp-validation-for="GardenContestCategory" class = "text-danger"></span>
 
 </div>
     <div class="form-group">
@@ -43,14 +42,12 @@
     <label asp-for="Address.State">State</label>
     <input asp-for="Address.State" class="form-control" placeholder="State">
     <span asp-validation-for="Address.State" class = "text-danger"></span>
-</div> 
 
+</div>
    <div class="form-group">
     <label asp-for="Image">Image</label>
-    <input asp-for="Image"  type = "file" class="form-control" placeholder="Image">
-    <span asp-validation-for="Image" class = "text-danger"></span>
-    </div>
-
+    <input asp-for="Image" type = "file" class="form-control" placeholder="Image">
+    <span asp-validation-for="Image" class = "text-danger"></span></div>
 
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>

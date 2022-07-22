@@ -1,4 +1,4 @@
-﻿{
+{
   "iisSettings": {
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
@@ -10,12 +10,13 @@
   "profiles": {
     "LocalGardenCommunity": {
       "commandName": "Project",
-      "dotnetRunMessages": true,
       "launchBrowser": true,
-      "applicationUrl": "https://localhost:7149;http://localhost:5149",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
-      }
+      },
+      "sqlDebugging": true,
+      "applicationUrl": "https://localhost:7149;http://localhost:5149",
+      "dotnetRunMessages": true
     },
     "IIS Express": {
       "commandName": "IISExpress",

@@ -1,8 +1,14 @@
+using CloudinaryDotNet;
+using CloudinaryDotNet.Actions;
 using LocalGardenCommunity.Data;
+using LocalGardenCommunity.Helpers;
 using LocalGardenCommunity.Interfaces;
 using LocalGardenCommunity.Repository;
+using LocalGardenCommunity.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,8 +19,23 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddControllersWithViews();
-builder.Services.AddScoped<IGardeningClubRepository, GardeningClubRepository>();
-builder.Services.AddScoped<IGardenContestRepository, GardenContestRepository>();
+builder.Services.AddTransient<IGardeningClubRepository, GardeningClubRepository>();
+builder.Services.AddTransient<IGardenContestRepository, GardenContestRepository>();
+builder.Services.AddTransient<IPhotoService, PhotoService>();
+
+var config = builder.Configuration.GetSection("CloudinarySettings").Get<CloudinarySettings>();
+
+builder.Services.AddTransient<Cloudinary,Cloudinary>(x => {
+     return new Cloudinary(new Account(
+config.CloudName,
+config.ApiKey,
+config.ApiSecret
+));
+}
+);
+
+
+
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
